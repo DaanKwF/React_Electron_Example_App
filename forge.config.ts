@@ -35,6 +35,18 @@ const config: ForgeConfig = {
       },
     }),
   ],
+  publishers: [
+    {
+      name: "@electron-forge/publisher-github",
+      config: {
+        repository: {
+          owner: "DaanKwF",
+          name: "React_Electron_Example_App",
+        },
+        draft: true,
+      },
+    },
+  ],
 };
 
 export default config;
