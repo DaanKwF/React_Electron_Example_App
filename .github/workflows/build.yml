@@ -36,4 +36,4 @@ jobs:
       - name: install dependencies
         run: yarn install
       - name: build
-    run: yarn run make
+        run: yarn run make
