@@ -1,5 +1,7 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain } from "electron";
 import isDev from "electron-is-dev";
+import apiClient from "./services/api-client";
+import { FetchGamesResponse } from "./types/renderer";
 
 declare const MAIN_WINDOW_WEBPACK_ENTRY: string;
 declare const MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY: string;
@@ -36,4 +38,9 @@ app.on("activate", () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
+});
+
+ipcMain.handle("getGames", async (event, args) => {
+  const response = await apiClient.get<FetchGamesResponse>("/games");
+  return response.data;
 });
