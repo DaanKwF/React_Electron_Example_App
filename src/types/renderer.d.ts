@@ -8,12 +8,12 @@ export interface FetchGamesResponse {
   results: Game[];
 }
 
-export interface IElectronAPI {
-  getGames: () => Promise<FetchGamesResponse>;
+export interface ElectronAPI {
+  fetchGames: () => Promise<FetchGamesResponse>;
 }
 
 declare global {
   interface Window {
-    electronAPI: IElectronAPI;
+    electronAPI: ElectronAPI;
   }
 }
