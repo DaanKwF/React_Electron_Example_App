@@ -11,6 +11,7 @@ export interface Game {
   name: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
+  metacritic: number;
 }
 
 const useGames = () => {
@@ -21,7 +22,10 @@ const useGames = () => {
     const fetchGames = async () => {
       window.electronAPI
         .fetchGames()
-        .then((res) => setGames(res.results))
+        .then((res) => {
+          console.log(res);
+          setGames(res.results);
+        })
         .catch((err) => setError(err));
     };
     fetchGames();
