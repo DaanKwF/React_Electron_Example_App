@@ -1,7 +1,7 @@
 {
   "name": "react_electron_example_app",
   "productName": "react_electron_example_app",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "My Electron application description",
   "main": ".webpack/main",
   "scripts": {
