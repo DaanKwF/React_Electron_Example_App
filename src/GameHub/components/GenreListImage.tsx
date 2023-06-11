@@ -12,7 +12,9 @@ const GenreListImage = ({ genre }: Props) => {
     getCroppedImageUrl(genre.image_background)
   );
 
-  return <Image boxSize="32px" borderRadius={8} src={image64} />;
+  return (
+    <Image boxSize="32px" objectFit="cover" borderRadius={8} src={image64} />
+  );
 };
 
 export default GenreListImage;
