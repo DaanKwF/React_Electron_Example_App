@@ -42,8 +42,8 @@ app.on("activate", () => {
   }
 });
 
-ipcMain.handle("fetchData", async (event, endpoint) => {
-  const response = await apiClient.get(endpoint);
+ipcMain.handle("fetchData", async (event, endpoint, requestConfig) => {
+  const response = await apiClient.get(endpoint, { ...requestConfig });
   return response.data;
 });
 
