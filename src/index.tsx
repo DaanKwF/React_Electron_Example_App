@@ -42,8 +42,8 @@ app.on("activate", () => {
   }
 });
 
-ipcMain.handle("fetchGames", async (event, args) => {
-  const response = await apiClient.get("/games");
+ipcMain.handle("fetchData", async (event, endpoint) => {
+  const response = await apiClient.get(endpoint);
   return response.data;
 });
 

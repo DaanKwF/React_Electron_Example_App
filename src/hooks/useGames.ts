@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import useData from "./useData";
 
 export interface Platform {
   id: number;
@@ -14,24 +14,6 @@ export interface Game {
   metacritic: number;
 }
 
-const useGames = () => {
-  const [games, setGames] = useState<Game[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    const fetchGames = async () => {
-      window.electronAPI
-        .fetchGames()
-        .then((res) => {
-          console.log(res);
-          setGames(res.results);
-        })
-        .catch((err) => setError(err));
-    };
-    fetchGames();
-  }, []);
-
-  return { games, error };
-};
+const useGames = () => useData<Game>("/games");
 
 export default useGames;

@@ -1,6 +1,6 @@
 import { contextBridge, ipcRenderer } from "electron";
 
 contextBridge.exposeInMainWorld("electronAPI", {
-  fetchGames: () => ipcRenderer.invoke("fetchGames"),
+  fetchData: (endpoint: string) => ipcRenderer.invoke("fetchData", endpoint),
   fetchImage: (url: string) => ipcRenderer.invoke("fetchImage", url),
 });

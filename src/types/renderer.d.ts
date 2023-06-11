@@ -1,10 +1,10 @@
-export interface FetchGamesResponse {
+export interface FetchResponse<T> {
   count: number;
-  results: Game[];
+  results: T[];
 }
 
 export interface ElectronAPI {
-  fetchGames: () => Promise<FetchGamesResponse>;
+  fetchData: <T>(endpoint: string) => Promise<FetchResponse<T>>;
   fetchImage: (url: string) => Promise<string>;
 }
 

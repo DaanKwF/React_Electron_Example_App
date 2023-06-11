@@ -3,17 +3,19 @@ import { Game } from "../../hooks/useGames";
 import useImage from "../../hooks/useImage";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
+import getCroppedImageUrl from "../../services/image-url";
 
 interface Props {
   game: Game;
 }
 
 const GameCard = ({ game }: Props) => {
-  const { image64, error } = useImage(game.background_image);
+  const { image64, error } = useImage(
+    getCroppedImageUrl(game.background_image)
+  );
 
   return (
-    <Card borderRadius={10} overflow={"hidden"}>
-      {error && <Text>{error}</Text>}
+    <Card>
       <Image src={image64} />
       <CardBody>
         <Heading fontSize={"2xl"}>{game.name}</Heading>
