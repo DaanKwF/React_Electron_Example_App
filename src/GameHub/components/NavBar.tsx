@@ -1,5 +1,5 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
-import logo from "../../assets/logo.webp";
+const logo = require("../../assets/logo.webp");
+import { HStack, Image } from "@chakra-ui/react";
 import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
