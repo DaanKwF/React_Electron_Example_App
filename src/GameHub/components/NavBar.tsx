@@ -1,7 +1,9 @@
-const logo = require("../../assets/logo.webp");
 import { HStack, Image } from "@chakra-ui/react";
-import ColorModeSwitch from "./ColorModeSwitch";
+
 import SearchBar from "./SearchBar";
+import ColorModeSwitch from "./ColorModeSwitch";
+
+const logo = require("../../assets/logo.webp");
 
 interface Props {
   onSearch: (searchText: string) => void;

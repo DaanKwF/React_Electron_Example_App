@@ -1,4 +1,5 @@
 import { Image } from "@chakra-ui/react";
+
 import { Genre } from "../../hooks/useGenres";
 import useImage from "../../hooks/useImage";
 import getCroppedImageUrl from "../../services/image-url";

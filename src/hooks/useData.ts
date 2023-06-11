@@ -1,5 +1,5 @@
-import { AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
+import { AxiosRequestConfig } from "axios";
 
 const useData = <T>(
   endpoint: string,

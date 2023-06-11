@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 const placeholder = require("../assets/no-image-placeholder.webp");
 
 const useImage = (url: string) => {
